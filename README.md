@@ -12,17 +12,17 @@ Command-line Instructions
 * **Prerequisites:**
     * Install the 1.8 version of [Java](https://java.com) and [Maven](https://maven.apache.org/download.html).
     * You may need to set your `JAVA_HOME`.
-1. Unzip the file containing the application source
+1. Checkout from github or unzip the file containing the application source to an empty directory, e.g. ticket-service)
 2. cd to the directory
-3. In order to change the configuration, see file <unzip-dir>/src/main/resources/app.properties. Changing the hold time will affect the duration of unit tests.
+3. In order to change the configuration, see file <checkout-dir>/src/main/resources/app.properties. Changing the hold time will affect the duration of unit tests.
 4. Build and run tests using 'mvn test' (Note that there are concurrent tests that wait for hold time to expire and threads to cleanup, so these tests take a few minutes to run.)
 5. To build package: 'mvn package'. This creates 'target/ticket-service-1.0.0-RELEASE-jar-with-dependencies.jar'
-6. To Run the interactive CLI:  {JAVA_HOME}/bin/java -jar target/ticket-service-1.0.0-RELEASE-jar-with-dependencies.jar
+6. To Run the interactive CLI:  {JAVA_HOME}/bin/java -jar <checkout-dir>/target/ticket-service-1.0.0-RELEASE-jar-with-dependencies.jar
 7. To generate javadoc: 'mvn javadoc:jar'. 
-8. The <unzip-dir>/doc directory has a class diagram as well.
+8. The <checkout-dir>/doc directory has project docs including a class diagram.
 
 ```bash
-$ cd <unzip-dir>/ticketing-service/
+$ cd <checkout-dir>/ticketing-service/
 # build and package
 mvn package
 
@@ -36,7 +36,7 @@ To enable logging, please take a look at src/main/resources/log4j2.xml. The logs
 
 ## Running the tests
 
-$ cd <unzip-dir>
+$ cd <checkout-dir>
 $ mvn test # Note that there are concurrent tests that wait for hold time to expire and threads to cleanup, so these tests take a few minutes to run.
 
 ### Tests
